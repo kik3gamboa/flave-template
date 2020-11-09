@@ -1,0 +1,16 @@
+class sample {
+  view main {
+    @{
+      var list = data.list;
+    }
+    <h1 class="sample-page">Sample Page</h1>
+    @(this.lists(list))
+    @(this.blogspot({title: data.title, content: data.content, date: data.date}))
+  }
+  view lists{
+    <ul>
+      @for(var i = 0; i < data.length; i++)
+        <li>@(data[i])</li>
+    </ul>
+  }
+}
